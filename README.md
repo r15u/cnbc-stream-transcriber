@@ -26,7 +26,6 @@ The project is designed for unattended, long-running use on any machine that sup
 * Python 3.9 or later  
 * FFmpeg in the system path  
 * An internet connection that can reach `tunein.com`  
-* (Optional) CUDA-capable GPU for faster transcription
 
 ---
 
@@ -40,4 +39,18 @@ python3 -m venv .venv
 source .venv/bin/activate          # Windows: .\.venv\Scripts\activate
 python -m pip install --upgrade pip wheel
 pip install -r requirements.txt
+```
+
+---
+
+## Usage
+* Open the XML feed below in a browser and search for the first *.m3u8 link
+  ```bash
+  https://opml.radiotime.com/Tune.ashx?id=s25740&formats=aac
+  # TuneIn keys expire every few hours; fetch a new URL whenever the script cannot reconnect.)
+  ```
+* Start the recorder and transcriber
+  ```bash
+  python stream_cnbc.py "https://hls.tunein.com/.../media.m3u8?...key=XXXX"
+  ```
 
