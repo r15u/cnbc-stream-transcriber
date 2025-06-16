@@ -1,0 +1,8 @@
+# Core dependencies
+openai-whisper>=20231114
+tqdm
+
+# NOTE ─ Whisper automatically pulls in PyTorch.
+#        If you need a specific CUDA wheel, install it manually
+#        *before* installing Whisper, e.g.:
+#        pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
